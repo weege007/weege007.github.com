@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[weedge]]></title>
+  <link href="http://weege007.github.com/atom.xml" rel="self"/>
+  <link href="http://weege007.github.com/"/>
+  <updated>2013-01-01T00:00:00-08:00</updated>
+  <id>http://weege007.github.com/</id>
+  <author>
+    <name><![CDATA[时间飘过]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[octopress+gitcafe]]></title>
+    <link href="http://weege007.github.com/blog/octopress-plus-gitcafe.html"/>
+    <updated>2013-01-20T01:39:00-08:00</updated>
+    <id>http://weege007.github.com/blog/octopress-plus-gitcafe</id>
+    <content type="html"><![CDATA[<p>最近发现github的pages服务有些不稳定，需要翻墙了，
+于是用了国内的gitcafe，把github本国话，哈哈，采用同样的方法部署octopress，需要修改一下Rakefile文件，
+具体将 setup_github_pages 相关操作改成 setup_gitcafe_pages, 修改的地方不大，
+直接看文件吧<a href="https://gitcafe.com/weedge/weedge/blob/master/Rakefile">https://gitcafe.com/weedge/weedge/blob/master/Rakefile</a>
+其他操作参考其<a href="http://blog.gitcafe.com/116.html">博客</a>。</p>
+
+<!--more-->
+
+
+<p>慢慢倒腾吧，git命令慢慢熟悉了，有时间整理下。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[像黑客一样写博客]]></title>
+    <link href="http://weege007.github.com/blog/hello.html"/>
+    <updated>2013-01-01T21:00:00-08:00</updated>
+    <id>http://weege007.github.com/blog/hello</id>
+    <content type="html"><![CDATA[<p>最近一段时间想整个博客，来记录一些事情，感觉记忆力不如从前了，想起以前有位老程序员，身边总是挂一个小挎包，装了一些小便条(todo list)；我想人的精力是有限的，当做完一件事， 过段时间，可能忘了曾今做过的事，说的话；本来想用worldpress，但是貌似需要申请空间，不同以往了，现在都是收费的了，无意间发现了<a href="http://octopress.org/docs/">octopress</a>,这是个好东东啊，轻量级的，不像worldpress臃肿，不需要使用mysql,通过git直接可以部署到github pages上搭建一个副本。也可以部署到<a href="http://www.heroku.com/">heroku</a>；国内好像也有对octopress的部署支持。</p>
+
+<p>在开始写过程之前先说下为毛这样做，其实也是觉得对新鲜的东东比较感兴趣吧！</p>
+
+<ol>
+<li><p>用octopress写博客，就像网上说的-像黑客一样写博客，貌似需要那么一点伪技术，看上去就像geek那样啦~~ 呵呵。</p></li>
+<li><p>整个服务的搭建是完全免费的，也许对于我这个比较穷困专业挨踢男来说是一个开源节流的渠道吧。</p></li>
+<li><p>使用octopress来写博客，支持<a href="http://wowubuntu.com/markdown/basic.html">markdown</a>,和<a href="http://en.wikipedia.org/wiki/Haml">haml</a>,
+个人喜欢使用前者，github上可以直接对其编辑；而且主要的是用命令来发布，这动作很cool,like it~!,感觉比较碉，哎呦，不错哦~！
+可以使用<code>rake -T</code>来查看信息,发布常用的命令:
+<code>rake install[theme]  rake preview  rake new_post[title]  rake generate  rake deploy</code></p></li>
+<li><p>最后是可以离线写博客还是挺爽的，用git对文章进行备份，以及静态页面生成，style也不错。</p>
+
+<p> 这里不具体的介绍octpress搭建在gitHub的过程，可以查看octpress的在线文档，说的很清楚的。
+不过在deploy的时候可能需要ssh key,在终端执行：
+<code>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</code>
+将其显示:
+<code>[[ -f ~/.ssh/id_rsa.pub ]] &amp;&amp; cat ~/.ssh/id_rsa.pub</code>
+ 然后进入<a href="https://github.com/account/ssh">https://github.com/account/ssh</a>中点击Add another public key，粘贴前面步骤复制的信息，请格外注意，不要在Title中填写内容，直接将复制的内容粘贴到Key中，然后点击：Add Key即可。
+ 还可以参考：<a href="https://help.github.com/articles/generating-ssh-keys">github上的帮助文档</a></p></li>
+</ol>
+
+
+<!--more-->
+
+
+<p>由于自己对ruby不熟悉，但是想使用tag插件，不想使用octpress自带的分类插件，所以在网上找了下，感觉<a href="http://mrzhang.me/" title="wǒ_is神仙">wǒ_is神仙</a>童themes风格挺好的，于是采用了<a href="https://github.com/jsw0528/octopress/tree/mrzhang_me/">他Fork的Octopress</a>，谢谢他的开源，与原始版本的的区别如下：</p>
+
+<ol>
+<li><p><a href="https://github.com/jsw0528/octopress/blob/mrzhang_me/.rvmrc">.Rvmrc</a><br/>
+神仙同学用的是Ruby1.9.3，Octopress最低要求1.9.2(采用rvm安装ruby,比较方便)</p></li>
+<li><p><a href="https://github.com/jsw0528/octopress/blob/mrzhang_me/Gemfile">Gemfile</a><br/>
+源改成了ruby.taobao.org的，去掉了部分gem的版本号限制</p></li>
+<li><p><a href="https://github.com/jsw0528/octopress/blob/mrzhang_me/Rakefile">Rakefile</a><br/>
+这个文件可以修改自己喜欢的编辑方式(haml,markdown)，octopress默认使用markdown,作者采用haml,
+修改了时区，降低主题对custom目录的依赖</p></li>
+<li><p><a href="https://github.com/jsw0528/octopress/blob/mrzhang_me/_config.yml">_config.yml</a><br/>
+定制化配置信息，日期格式、永久链接、微博，评论(默认支持disqus,可以使用国内的多说)等等</p></li>
+<li><p><a href="https://github.com/jsw0528/octopress/blob/mrzhang_me/plugins/sh_js.rb">Plugins/sh_js.rb</a><br/>
+代码高亮插件(plugins是用ruby写的插件库，自己可以扩展)</p></li>
+<li><p><a href="https://github.com/jsw0528/octopress/blob/mrzhang_me/plugins/tag_generator.rb">Plugins/tag_generator.rb</a><br/>
+支持中文的Tag插件</p></li>
+<li><p><a href="https://github.com/jsw0528/octopress/blob/mrzhang_me/.themes/blog/">.Themes/blog/</a><br/>
+神仙同学的博客主题(./themes主题风格文件夹，可以自己定制)</p></li>
+</ol>
+
+
+<p>Tips: 在看source(来自第7条所说文件同rake install[theme]复制生成的)源码时，发现采用缓存(<a href="http://www.cnblogs.com/brainmao/archive/2011/09/27/2193495.html">Cache Manifest</a>)，
+主要在页面中通过 iframe 来引用offline-cache.html这个静态文件，其中assets.manifest缓存了样式，图片，js信息，
+以达到我们不缓存当面页面，只缓存我们希望缓存文件的目的，所以有时候你对其他页面修改了，
+比如修改该了post的文件名的话，会以为没有更新成功的情况，其实已经在github服务器上了，要做的就是清除浏览器中的页面缓存或者按Ctrl+F5刷新下。</p>
+
+<p>ok~ 开始像黑客一样写博客吧~！</p>
+
+<!--more-->
+
+
+<p>参考：</p>
+
+<blockquote><ol>
+<li><a href="http://www.yangzhiping.com/tech/octopress.html">octopress-黑客一样写博客</a></li>
+<li><a href="http://www.yangzhiping.com/tech/r-markdown-knitr.html">Markdown写作浅谈</a></li>
+<li><a href="http://lucifr.com/2011/12/21/octopress-on-server-and-portable-scheme/">服务器端Octopress搭建及移动方案</a></li>
+</ol>
+</blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[happy new year]]></title>
+    <link href="http://weege007.github.com/blog/happy-new-year.html"/>
+    <updated>2013-01-01T00:26:00-08:00</updated>
+    <id>http://weege007.github.com/blog/happy-new-year</id>
+    <content type="html"><![CDATA[<p>   新年开始了，工作了半年，经历一些，懂得一些，认识一些，对自己的未来总是在不断的寻觅中，却迷茫着~，每次家里人问起是否在这个城市待得习惯，不断的问我是否过得好，总是回复家人过得好，放心好了，出门在外，家人总是希望自己能够过得好，而对家人总是报喜不报忧；新年了，有些变化，给自己一些时间，计划似乎永远赶不上变化，改正自己，尽快恢复过来，加油吧~！</p>
+
+<p>  简单踏实就好，奶奶经常给说的话，一直记着。【step by step, 懂得珍惜】</p>
+
+<!--more-->
+
+
+<p>最近在看柴进写的《看见》, 用心在生活着。去年新年的时候，她的<a href="http://blog.sina.com.cn/chjguancha">博客</a>中有句话摘抄下来：</p>
+
+<p><code>“有人问，你的新年计划是什么？
+  谁能计划啥，碰到什么是什么，山高月小，就滴个石，乱石穿空，就拍个岸，遇上高山峡谷，自成江河湖海。但人总得流淌，没这个动作就算完了。
+  问为了什么？
+  啥也不为，这么着高兴，痛快。”</code></p>
+
+<p>  happy new year~! 2013 传递笑脸 ^!^  :)</p>
+]]></content>
+  </entry>
+  
+</feed>

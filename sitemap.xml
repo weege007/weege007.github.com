@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://weege007.github.com/blog/happy-new-year.html</loc>
+        <lastmod>2013-03-17T03:43:32-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://weege007.github.com/blog/hello.html</loc>
+        <lastmod>2013-03-17T03:43:32-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://weege007.github.com/blog/octopress-plus-gitcafe.html</loc>
+        <lastmod>2013-03-17T03:43:32-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://weege007.github.com/404.html</loc>
+        <lastmod>2013-03-16T23:17:32-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://weege007.github.com/blog/archives/</loc>
+        <lastmod>2013-03-17T03:25:54-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://weege007.github.com/</loc>
+        <lastmod>2013-03-17T03:25:54-07:00</lastmod>
+    </url>
+</urlset>
